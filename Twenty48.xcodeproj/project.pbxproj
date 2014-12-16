@@ -15,6 +15,9 @@
 		FCDFEF271A3FEE8200D6D263 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCDFEF261A3FEE8200D6D263 /* Images.xcassets */; };
 		FCDFEF2A1A3FEE8200D6D263 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCDFEF281A3FEE8200D6D263 /* LaunchScreen.xib */; };
 		FCDFEF361A3FEE8200D6D263 /* Twenty48Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFEF351A3FEE8200D6D263 /* Twenty48Tests.swift */; };
+		FCDFEF401A3FEEEF00D6D263 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFEF3F1A3FEEEF00D6D263 /* Block.swift */; };
+		FCDFEF421A3FEF6500D6D263 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFEF411A3FEF6500D6D263 /* Array2D.swift */; };
+		FCDFEF441A3FEF7F00D6D263 /* Twenty48.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFEF431A3FEF7F00D6D263 /* Twenty48.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		FCDFEF2F1A3FEE8200D6D263 /* Twenty48Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Twenty48Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCDFEF341A3FEE8200D6D263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCDFEF351A3FEE8200D6D263 /* Twenty48Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twenty48Tests.swift; sourceTree = "<group>"; };
+		FCDFEF3F1A3FEEEF00D6D263 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		FCDFEF411A3FEF6500D6D263 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		FCDFEF431A3FEF7F00D6D263 /* Twenty48.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twenty48.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,9 @@
 				FCDFEF1D1A3FEE8200D6D263 /* GameScene.sks */,
 				FCDFEF1F1A3FEE8200D6D263 /* GameScene.swift */,
 				FCDFEF211A3FEE8200D6D263 /* GameViewController.swift */,
+				FCDFEF3F1A3FEEEF00D6D263 /* Block.swift */,
+				FCDFEF411A3FEF6500D6D263 /* Array2D.swift */,
+				FCDFEF431A3FEF7F00D6D263 /* Twenty48.swift */,
 				FCDFEF231A3FEE8200D6D263 /* Main.storyboard */,
 				FCDFEF261A3FEE8200D6D263 /* Images.xcassets */,
 				FCDFEF281A3FEE8200D6D263 /* LaunchScreen.xib */,
@@ -220,8 +229,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCDFEF201A3FEE8200D6D263 /* GameScene.swift in Sources */,
+				FCDFEF401A3FEEEF00D6D263 /* Block.swift in Sources */,
+				FCDFEF441A3FEF7F00D6D263 /* Twenty48.swift in Sources */,
 				FCDFEF221A3FEE8200D6D263 /* GameViewController.swift in Sources */,
 				FCDFEF1C1A3FEE8200D6D263 /* AppDelegate.swift in Sources */,
+				FCDFEF421A3FEF6500D6D263 /* Array2D.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
