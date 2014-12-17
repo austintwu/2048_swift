@@ -27,4 +27,9 @@ class Array2D<T> {
         }
     }
     
+    func occupied(col: Int, row: Int) -> Bool {
+        var cell = self[row, col]
+        return cell != nil
+    }
+    
 }

@@ -47,6 +47,14 @@ class Block: Hashable, Printable {
         self.combined = false
     }
     
+    func doubleNum(){
+        number *= 2
+    }
+    
+    func shiftBy(x: Int, y: Int){
+        col += x
+        row += y
+    }
     
 }
 func == (lhs: Block, rhs: Block) -> Bool {

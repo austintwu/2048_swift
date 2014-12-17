@@ -9,43 +9,51 @@
 import UIKit
 import SpriteKit
 
-extension SKNode {
-    class func unarchiveFromFile(file : NSString) -> SKNode? {
-        if let path = NSBundle.mainBundle().pathForResource(file, ofType: "sks") {
-            var sceneData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)!
-            var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
-            
-            archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
-            let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as GameScene
-            archiver.finishDecoding()
-            return scene
-        } else {
-            return nil
-        }
-    }
-}
+class GameViewController: UIViewController, Twenty48Delegate {
 
-class GameViewController: UIViewController {
-
+    var scene : GameScene!
+    var twenty48: Twenty48!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
-            // Configure the view.
-            let skView = self.view as SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-            
-            /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
-            
-            skView.presentScene(scene)
-        }
+        
+        //configure the view
+        let skView = view as SKView
+        skView.multipleTouchEnabled = false
+        
+        //create and configure scene
+        scene = GameScene(size: skView.bounds.size)
+        scene.scaleMode = .AspectFill
+        
+        twenty48 = Twenty48()
+        twenty48.delegate = self
+        twenty48.beginGame()
+        
+        //loads scene in view
+        skView.presentScene(scene)
+    }
+    
+    //end of game
+    func gameDidEnd(twenty48: Twenty48){
+        
+    }
+    
+    //beginning of game
+    func gameDidBegin(twenty48: Twenty48){
+        
+    }
+    
+    //blocks were swiped in one direction
+    func blockDidSlide(twenty48: Twenty48, block: Block){
+        
+    }
+    
+    //blocks
+    func blockDidCombine(twenty48: Twenty48, block: Block){
+        
     }
 
+    
     override func shouldAutorotate() -> Bool {
         return true
     }
