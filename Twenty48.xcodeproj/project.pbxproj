@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC8065B31A41CEC600AC0C9B /* Board Background.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8065B21A41CEC600AC0C9B /* Board Background.png */; };
 		FCDFEF1C1A3FEE8200D6D263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFEF1B1A3FEE8200D6D263 /* AppDelegate.swift */; };
-		FCDFEF1E1A3FEE8200D6D263 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FCDFEF1D1A3FEE8200D6D263 /* GameScene.sks */; };
 		FCDFEF201A3FEE8200D6D263 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFEF1F1A3FEE8200D6D263 /* GameScene.swift */; };
 		FCDFEF221A3FEE8200D6D263 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFEF211A3FEE8200D6D263 /* GameViewController.swift */; };
 		FCDFEF251A3FEE8200D6D263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDFEF231A3FEE8200D6D263 /* Main.storyboard */; };
@@ -31,10 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC8065B21A41CEC600AC0C9B /* Board Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Board Background.png"; sourceTree = "<group>"; };
 		FCDFEF161A3FEE8200D6D263 /* Twenty48.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twenty48.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCDFEF1A1A3FEE8200D6D263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCDFEF1B1A3FEE8200D6D263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FCDFEF1D1A3FEE8200D6D263 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		FCDFEF1F1A3FEE8200D6D263 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		FCDFEF211A3FEE8200D6D263 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		FCDFEF241A3FEE8200D6D263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				FCDFEF1B1A3FEE8200D6D263 /* AppDelegate.swift */,
-				FCDFEF1D1A3FEE8200D6D263 /* GameScene.sks */,
 				FCDFEF1F1A3FEE8200D6D263 /* GameScene.swift */,
 				FCDFEF211A3FEE8200D6D263 /* GameViewController.swift */,
 				FCDFEF3F1A3FEEEF00D6D263 /* Block.swift */,
@@ -105,6 +104,7 @@
 		FCDFEF191A3FEE8200D6D263 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FC8065B21A41CEC600AC0C9B /* Board Background.png */,
 				FCDFEF1A1A3FEE8200D6D263 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -209,8 +209,8 @@
 			files = (
 				FCDFEF2A1A3FEE8200D6D263 /* LaunchScreen.xib in Resources */,
 				FCDFEF271A3FEE8200D6D263 /* Images.xcassets in Resources */,
-				FCDFEF1E1A3FEE8200D6D263 /* GameScene.sks in Resources */,
 				FCDFEF251A3FEE8200D6D263 /* Main.storyboard in Resources */,
+				FC8065B31A41CEC600AC0C9B /* Board Background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +425,7 @@
 				FCDFEF3B1A3FEE8200D6D263 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCDFEF3C1A3FEE8200D6D263 /* Build configuration list for PBXNativeTarget "Twenty48Tests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +434,7 @@
 				FCDFEF3E1A3FEE8200D6D263 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
