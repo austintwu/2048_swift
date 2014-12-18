@@ -24,11 +24,29 @@ class GameViewController: UIViewController, Twenty48Delegate {
         //create and configure scene
         scene = GameScene(size: skView.bounds.size)
         scene.scaleMode = .AspectFill
+    
+        //set up swipe recognizers
+        var swipeUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeUp.direction = UISwipeGestureRecognizerDirection.Up
+        self.view.addGestureRecognizer(swipeUp)
         
+        var swipeDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeDown.direction = UISwipeGestureRecognizerDirection.Down
+        self.view.addGestureRecognizer(swipeDown)
+        
+        var swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        var swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        //start game
         twenty48 = Twenty48()
         twenty48.delegate = self
         twenty48.beginGame()
-        
+    
         //loads scene in view
         skView.presentScene(scene)
     }
@@ -39,23 +57,34 @@ class GameViewController: UIViewController, Twenty48Delegate {
     }
     
     //beginning of game
-    func gameDidBegin(twenty48: Twenty48){
-        
+    func gameDidBegin(twenty48: Twenty48, firstblock: Block){
+        scene.renderNewBlock(firstblock)
     }
     
-    //blocks were swiped in one direction
+    //a block slid in one direction
     func blockDidSlide(twenty48: Twenty48, block: Block){
-        
+        scene.updateBlockSprite(block)
     }
     
-    //blocks
-    func blockDidCombine(twenty48: Twenty48, block: Block){
-        
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.Up:
+                twenty48.swipeUp()
+            case UISwipeGestureRecognizerDirection.Down:
+                twenty48.swipeDown()
+            case UISwipeGestureRecognizerDirection.Left:
+                twenty48.swipeLeft()
+            case UISwipeGestureRecognizerDirection.Right:
+                twenty48.swipeRight()
+            default:
+                break
+            }
+        }
     }
-
     
     override func shouldAutorotate() -> Bool {
-        return true
+        return false
     }
 
     override func supportedInterfaceOrientations() -> Int {

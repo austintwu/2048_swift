@@ -15,6 +15,9 @@ class Block: Hashable, Printable {
     var number: Int
     var combined : Bool
     
+    var sprite: SKSpriteNode?
+    var spriteLabel: SKLabelNode?
+    
     var colorValues: (Int, Int, Int) {
         switch number{
         case 2: return (238, 228, 218)
@@ -51,9 +54,13 @@ class Block: Hashable, Printable {
         number *= 2
     }
     
-    func shiftBy(x: Int, y: Int){
-        col += x
-        row += y
+    func setLocation(x: Int, y: Int){
+        col = x
+        row = y
+    }
+    
+    func didCombine() {
+        combined = true
     }
     
 }
