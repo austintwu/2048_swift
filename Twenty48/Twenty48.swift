@@ -18,8 +18,14 @@ protocol Twenty48Delegate{
     //beginning of game
     func gameDidBegin(twenty48: Twenty48, firstblock: Block)
     
+    //block was added
+    func blockWasAdded(twenty48: Twenty48, block: Block)
+    
     //a block moved without combining
     func blockDidSlide(twenty48: Twenty48, block: Block)
+    
+    //a block moved and movedBlock moved, got deleted, and doubledBlock was doubled
+    func blockDidCombine(twenty48: Twenty48, movedBlock: Block, doubledBlock: Block)
 }
 
 class Twenty48{
@@ -56,6 +62,7 @@ class Twenty48{
         var result = randomOpenCell
         var newBlock = Block(col: result.col, row: result.row, number: newBlockNumber)
         blockArray[result.col, result.row] = newBlock
+        delegate?.blockWasAdded(self, block: newBlock)
         return newBlock
     }
     
@@ -66,7 +73,7 @@ class Twenty48{
     }
     
     func beginGame(){
-        var block = self.testAddBlock()
+        var block = self.addBlock()
         delegate?.gameDidBegin(self, firstblock: block)
     }
     
@@ -79,6 +86,7 @@ class Twenty48{
         var loc = (col: x, row: y)
         var goloc = (col: x, row: y)
         
+        //after loop, goloc = furthest empty cell in correct direction
         while isValid(loc.col, row: loc.row) {
             if blockArray[loc.col, loc.row] == nil {
                 goloc = loc
@@ -86,14 +94,26 @@ class Twenty48{
             loc.col += delx
             loc.row += dely
         }
+        /**
+        When theres 3 in a row, it combines the first two adn covers the third. why.
+        whichis saying the same thing as the middle one combines and then still moves OR the last one moves toofar
+        */
         
         var testloc = (col: goloc.col + delx, row: goloc.row + dely)
         if isValid(testloc.col, row: testloc.row) {
-            if blockArray[testloc.col, testloc.row]?.number == blockArray[x,y]?.number{
-                blockArray[testloc.col, testloc.row]?.doubleNum()
-                blockArray[testloc.col, testloc.row]?.didCombine()
-                blockArray[x, y] = nil
-                return
+            if blockArray[testloc.col, testloc.row]?.number == blockArray[x,y]?.number {
+                if !blockArray[testloc.col, testloc.row]!.combined {
+                    var doubledBlock = blockArray[testloc.col, testloc.row]
+                    doubledBlock?.doubleNum()
+                    doubledBlock?.didCombine()
+                    
+                    var movedBlock = blockArray[x,y]
+                    movedBlock!.setLocation(testloc.col - delx, y: testloc.row - dely)
+                    blockArray[x, y] = nil
+                    
+                    delegate?.blockDidCombine(self, movedBlock: movedBlock!, doubledBlock: doubledBlock!)
+                    return
+                }
             }
         }
         var block = blockArray[x,y]
@@ -101,8 +121,6 @@ class Twenty48{
         blockArray[goloc.col, goloc.row] = block
         blockArray[x,y] = nil
         delegate?.blockDidSlide(self, block: block!)
-        
-        //maybe instead we need to add all the blocks that move at once to a collection, and then call blockDidSlide on all of them at once, in the same way tetris moves 4 blocks in a shape at once AND THEN does the delay? Instead of one block then delay then one block
     }
     
     func isValid(col: Int, row: Int) -> Bool {
@@ -115,7 +133,8 @@ class Twenty48{
                 slide(0, dely: 1, x: c, y: r)
             }
         }
-        //addBlock()
+        addBlock()
+        clearCombined()
     }
     
     func swipeDown(){
@@ -124,7 +143,8 @@ class Twenty48{
                 slide(0, dely: -1, x: c, y: r)
             }
         }
-        //addBlock()
+        addBlock()
+        clearCombined()
     }
     
     func swipeLeft(){
@@ -133,7 +153,8 @@ class Twenty48{
                 slide(-1, dely: 0, x: c, y: r)
             }
         }
-        //addBlock()
+        addBlock()
+        clearCombined()
     }
 
     func swipeRight(){
@@ -142,9 +163,20 @@ class Twenty48{
                 slide(1, dely: 0, x: c, y: r)
             }
         }
-        //addBlock()
+        addBlock()
+        clearCombined()
     }
     
+    func clearCombined(){
+        for var r = 0; r < NumRows; r++ {
+            for var c = 0; c < NumRows; c++ {
+                if blockArray[c,r] != nil {
+                    blockArray[c,r]!.uncombine()
+                }
+                
+            }
+        }
+    }
     
     func endGame(){
         delegate?.gameDidEnd(self)

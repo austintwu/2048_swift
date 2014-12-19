@@ -15,6 +15,7 @@
 		FC2E71091A43548A00EBFBC8 /* 32.png in Resources */ = {isa = PBXBuildFile; fileRef = FC2E71021A43548A00EBFBC8 /* 32.png */; };
 		FC2E710A1A43548A00EBFBC8 /* 64.png in Resources */ = {isa = PBXBuildFile; fileRef = FC2E71031A43548A00EBFBC8 /* 64.png */; };
 		FC2E710B1A43548A00EBFBC8 /* 256.png in Resources */ = {isa = PBXBuildFile; fileRef = FC2E71041A43548A00EBFBC8 /* 256.png */; };
+		FC2E710D1A439E7A00EBFBC8 /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = FC2E710C1A439E7A00EBFBC8 /* Blue.png */; };
 		FC8065B31A41CEC600AC0C9B /* Board Background.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8065B21A41CEC600AC0C9B /* Board Background.png */; };
 		FC8065B51A41D66300AC0C9B /* Tile Background.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8065B41A41D66300AC0C9B /* Tile Background.png */; };
 		FC8065B71A41F8D500AC0C9B /* Game Background.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8065B61A41F8D500AC0C9B /* Game Background.png */; };
@@ -49,6 +50,7 @@
 		FC2E71021A43548A00EBFBC8 /* 32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32.png; sourceTree = "<group>"; };
 		FC2E71031A43548A00EBFBC8 /* 64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 64.png; sourceTree = "<group>"; };
 		FC2E71041A43548A00EBFBC8 /* 256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 256.png; sourceTree = "<group>"; };
+		FC2E710C1A439E7A00EBFBC8 /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
 		FC8065B21A41CEC600AC0C9B /* Board Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Board Background.png"; sourceTree = "<group>"; };
 		FC8065B41A41D66300AC0C9B /* Tile Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile Background.png"; sourceTree = "<group>"; };
 		FC8065B61A41F8D500AC0C9B /* Game Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Game Background.png"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		FCDFEF191A3FEE8200D6D263 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FC2E710C1A439E7A00EBFBC8 /* Blue.png */,
 				FC2E70FE1A43548A00EBFBC8 /* 2.png */,
 				FC2E70FF1A43548A00EBFBC8 /* 4.png */,
 				FC2E71001A43548A00EBFBC8 /* 8.png */,
@@ -249,6 +252,7 @@
 				FC2E70FD1A43540800EBFBC8 /* 128.png in Resources */,
 				FC2E71081A43548A00EBFBC8 /* 16.png in Resources */,
 				FC8065B51A41D66300AC0C9B /* Tile Background.png in Resources */,
+				FC2E710D1A439E7A00EBFBC8 /* Blue.png in Resources */,
 				FCDFEF251A3FEE8200D6D263 /* Main.storyboard in Resources */,
 				FC8065B31A41CEC600AC0C9B /* Board Background.png in Resources */,
 			);

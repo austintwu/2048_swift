@@ -63,6 +63,10 @@ class Block: Hashable, Printable {
         combined = true
     }
     
+    func uncombine() {
+        combined = false
+    }
+    
 }
 func == (lhs: Block, rhs: Block) -> Bool {
     return (lhs.col == rhs.col) && (lhs.row == rhs.row) && (lhs.number == rhs.number)

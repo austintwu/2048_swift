@@ -58,13 +58,23 @@ class GameViewController: UIViewController, Twenty48Delegate {
     
     //beginning of game
     func gameDidBegin(twenty48: Twenty48, firstblock: Block){
-        scene.renderNewBlock(firstblock)
+
+    }
+    
+    func blockWasAdded(twenty48: Twenty48, block: Block){
+        scene.renderNewBlock(block)
     }
     
     //a block slid in one direction
     func blockDidSlide(twenty48: Twenty48, block: Block){
-        scene.updateBlockSprite(block)
+        scene.updateBlockSpriteMove(block) 
     }
+    
+    //a block moved and movedBlock moved, got deleted, and doubledBlock was doubled
+    func blockDidCombine(twenty48: Twenty48, movedBlock: Block, doubledBlock: Block){
+        scene.updateBlockCombining(movedBlock, doubledBlock: doubledBlock)
+    }
+    
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {

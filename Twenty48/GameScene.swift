@@ -63,6 +63,7 @@ class GameScene: SKScene {
             texture = SKTexture(imageNamed: String(block.number))
             textureCache[block.number] = texture
         }
+        texture = SKTexture(imageNamed: "Blue")
         let sprite = SKSpriteNode(texture: texture, size: CGSize(width: SquareSize, height: SquareSize))
         sprite.position = blockPosition(block.col, row: block.row)
         sprite.anchorPoint = CGPoint(x: 0, y: 0)
@@ -80,13 +81,18 @@ class GameScene: SKScene {
         label.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Center
         
         sprite.addChild(label)
+        
+        sprite.alpha = 0.0
+        let fadeInAction = SKAction.fadeInWithDuration(0.6)
+        fadeInAction.timingMode = .EaseOut
+        sprite.runAction(fadeInAction)
         blockLayer.addChild(sprite)
         
         block.spriteLabel = label
         block.sprite = sprite
     }
     
-    func updateBlockSprite(block: Block) {
+    func updateBlockSpriteMove(block: Block) {
         let sprite = block.sprite!
         let moveTo = blockPosition(block.col, row: block.row)
         let moveToAction:SKAction = SKAction.moveTo(moveTo, duration: 0.2)
@@ -101,20 +107,28 @@ class GameScene: SKScene {
         return CGPoint(x: x, y: y)
     }
     
-    func drawBoard(twenty48: Twenty48) {
-        for (idx, block) in enumerate(twenty48.blockArray.array){
-            
+    func updateBlockCombining(movedBlock: Block, doubledBlock: Block){
+        let sprite1 = movedBlock.sprite!
+        let moveTo = blockPosition(movedBlock.col, row: movedBlock.row)
+        let moveToAction:SKAction = SKAction.moveTo(moveTo, duration: 0.2)
+        moveToAction.timingMode = .EaseOut
+        sprite1.runAction(
+            SKAction.group([moveToAction, SKAction.fadeAlphaTo(1.0, duration: 0.2)]))
+        
+        sprite1.removeFromParent()
+        
+        let label = doubledBlock.spriteLabel!
+        label.text = "\(doubledBlock.number)"
+        
+        let sprite2 = doubledBlock.sprite!
+        var texture = textureCache[doubledBlock.number]
+        if texture == nil {
+            texture = SKTexture(imageNamed: String(doubledBlock.number))
+            textureCache[doubledBlock.number] = texture
         }
+        
+        sprite2.texture = texture
     }
-    
-    
-    /**
-    Next layer: 4x4 grid of squares (gamelayer)
-    Next layer: each individual block (blockLayer)
-    
-    //second goal: render grid with initial square on open
-    third goal: render grid before/after. forget animations for now
-    */
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
