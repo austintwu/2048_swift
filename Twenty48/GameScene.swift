@@ -10,11 +10,12 @@ import Foundation
 import UIKit
 import SpriteKit
 
-let distanceFromBottom = 146
+let distanceFromBottom = 70
 
 let BorderLength = 15
+let BoardSize = 345
 var SquareSize: Int{
-    return ((375-(5 * BorderLength))/4)
+    return ((BoardSize-(5 * BorderLength))/4)
 }
 
 class GameScene: SKScene {
@@ -35,8 +36,8 @@ class GameScene: SKScene {
         background.anchorPoint = CGPoint(x: 0, y: 0)
         addChild(background)
         
-        var board = SKSpriteNode(texture: SKTexture(imageNamed: "Board Background"), size: CGSize(width: 375, height: 375))
-        board.position = CGPoint(x: 0, y: distanceFromBottom)
+        var board = SKSpriteNode(texture: SKTexture(imageNamed: "Board Background"), size: CGSize(width: BoardSize, height: BoardSize))
+        board.position = CGPoint(x: (375 - BoardSize) / 2, y: distanceFromBottom + (375 - BoardSize) / 2)
         board.anchorPoint = CGPoint(x: 0, y: 0)
 
         for var r = 0; r < 4; r++ {
@@ -63,20 +64,15 @@ class GameScene: SKScene {
             texture = SKTexture(imageNamed: String(block.number))
             textureCache[block.number] = texture
         }
-        texture = SKTexture(imageNamed: "Blue")
         let sprite = SKSpriteNode(texture: texture, size: CGSize(width: SquareSize, height: SquareSize))
         sprite.position = blockPosition(block.col, row: block.row)
         sprite.anchorPoint = CGPoint(x: 0, y: 0)
         
         let label = SKLabelNode(text: "\(block.number)")
         
-        label.fontName = "Clear Sans"
+        label.fontName = "Apple SD Gothic Neo"
         label.fontSize = 50
-        if(block.number < 5){
-            label.fontColor = UIColor.blackColor()
-        } else {
-            label.fontColor = UIColor.whiteColor()
-        }
+        label.fontColor = UIColor(red: 0.39, green: 0.35, blue: 0.19, alpha: 1.0)
         label.position = CGPoint(x: SquareSize / 2, y: SquareSize / 2)
         label.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Center
         

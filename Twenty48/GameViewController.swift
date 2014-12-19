@@ -14,6 +14,8 @@ class GameViewController: UIViewController, Twenty48Delegate {
     var scene : GameScene!
     var twenty48: Twenty48!
     
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,14 +53,24 @@ class GameViewController: UIViewController, Twenty48Delegate {
         skView.presentScene(scene)
     }
     
-    //end of game
-    func gameDidEnd(twenty48: Twenty48){
-        
+    //beginning of game
+    func gameDidBegin(twenty48: Twenty48) {
+        scene.blockLayer.removeAllChildren()
     }
     
-    //beginning of game
-    func gameDidBegin(twenty48: Twenty48, firstblock: Block){
-
+    //end of game
+    func gameDidEnd(twenty48: Twenty48, win: Bool){
+        if win {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let gwvc = storyboard.instantiateViewControllerWithIdentifier("gwvcID") as GameWonViewController
+            gwvc.passController(self)
+            self.presentViewController(gwvc, animated: true, completion: nil)
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let govc = storyboard.instantiateViewControllerWithIdentifier("govcID") as GameOverViewController
+            govc.passController(self)
+            self.presentViewController(govc, animated: true, completion: nil)
+        }
     }
     
     func blockWasAdded(twenty48: Twenty48, block: Block){
@@ -73,8 +85,8 @@ class GameViewController: UIViewController, Twenty48Delegate {
     //a block moved and movedBlock moved, got deleted, and doubledBlock was doubled
     func blockDidCombine(twenty48: Twenty48, movedBlock: Block, doubledBlock: Block){
         scene.updateBlockCombining(movedBlock, doubledBlock: doubledBlock)
+        scoreLabel.text = "SCORE \(twenty48.score)"
     }
-    
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
@@ -91,6 +103,10 @@ class GameViewController: UIViewController, Twenty48Delegate {
                 break
             }
         }
+    }
+    
+    @IBAction func didTapRestart(sender: UIButton) {
+        viewDidLoad()
     }
     
     override func shouldAutorotate() -> Bool {

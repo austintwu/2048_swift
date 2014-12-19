@@ -12,11 +12,11 @@ let NumRows = 4
 let NumCols = 4
 
 protocol Twenty48Delegate{
-    //end of game
-    func gameDidEnd(twenty48: Twenty48)
-    
     //beginning of game
-    func gameDidBegin(twenty48: Twenty48, firstblock: Block)
+    func gameDidBegin(twenty48: Twenty48)
+    
+    //end of game
+    func gameDidEnd(twenty48: Twenty48, win: Bool)
     
     //block was added
     func blockWasAdded(twenty48: Twenty48, block: Block)
@@ -58,31 +58,53 @@ class Twenty48{
     }
     
     // adds a new block to an open cell having either 2 or 4
-    func addBlock() -> Block {
+    func addBlock(){
         var result = randomOpenCell
         var newBlock = Block(col: result.col, row: result.row, number: newBlockNumber)
         blockArray[result.col, result.row] = newBlock
         delegate?.blockWasAdded(self, block: newBlock)
-        return newBlock
     }
     
-    func testAddBlock() -> Block {
-        var newBlock = Block(col: 0, row: 0, number: 2)
-        blockArray[0, 0] = newBlock
-        return newBlock
+    func testAddBlock(){
+        var block1 = Block(col: 0, row: 3, number: 4)
+        var block2 = Block(col: 1, row: 3, number: 4)
+//        var block3 = Block(col: 2, row: 0, number: 2)
+//        var block4 = Block(col: 3, row: 0, number: 4)
+//        var block5 = Block(col: 0, row: 1, number: 4)
+//        var block6 = Block(col: 1, row: 1, number: 2)
+//        var block7 = Block(col: 2, row: 1, number: 4)
+//        var block8 = Block(col: 3, row: 1, number: 2)
+        blockArray[0, 0] = block1
+        blockArray[1, 0] = block2
+//        blockArray[2, 0] = block3
+//        blockArray[3, 0] = block4
+//        blockArray[0, 1] = block5
+//        blockArray[1, 1] = block6
+//        blockArray[2, 1] = block7
+//        blockArray[3, 1] = block8
+        delegate?.blockWasAdded(self, block: block1)
+        delegate?.blockWasAdded(self, block: block2)
+//        delegate?.blockWasAdded(self, block: block3)
+//        delegate?.blockWasAdded(self, block: block4)
+//        delegate?.blockWasAdded(self, block: block5)
+//        delegate?.blockWasAdded(self, block: block6)
+//        delegate?.blockWasAdded(self, block: block7)
+//        delegate?.blockWasAdded(self, block: block8)
     }
     
     func beginGame(){
-        var block = self.addBlock()
-        delegate?.gameDidBegin(self, firstblock: block)
+        score = 0
+        delegate?.gameDidBegin(self)
+        self.testAddBlock()
     }
     
     // take block at loc x,y and move in delx dely direction
-    func slide(delx: Int, dely: Int, x: Int, y: Int){
-        if blockArray[x,y] == nil {
-            return
-        }
+    func slide(delx: Int, dely: Int, x: Int, y: Int) -> Bool{
         
+        if blockArray[x,y] == nil {
+            return false
+        }
+    
         var loc = (col: x, row: y)
         var goloc = (col: x, row: y)
         
@@ -94,11 +116,7 @@ class Twenty48{
             loc.col += delx
             loc.row += dely
         }
-        /**
-        When theres 3 in a row, it combines the first two adn covers the third. why.
-        whichis saying the same thing as the middle one combines and then still moves OR the last one moves toofar
-        */
-        
+    
         var testloc = (col: goloc.col + delx, row: goloc.row + dely)
         if isValid(testloc.col, row: testloc.row) {
             if blockArray[testloc.col, testloc.row]?.number == blockArray[x,y]?.number {
@@ -106,35 +124,43 @@ class Twenty48{
                     var doubledBlock = blockArray[testloc.col, testloc.row]
                     doubledBlock?.doubleNum()
                     doubledBlock?.didCombine()
-                    
+                    score += doubledBlock!.number
+                    if(doubledBlock!.number >= 64) {
+                        self.endGame(true)
+                    }
                     var movedBlock = blockArray[x,y]
                     movedBlock!.setLocation(testloc.col - delx, y: testloc.row - dely)
                     blockArray[x, y] = nil
                     
                     delegate?.blockDidCombine(self, movedBlock: movedBlock!, doubledBlock: doubledBlock!)
-                    return
+                    return true
                 }
             }
         }
-        var block = blockArray[x,y]
-        block?.setLocation(goloc.col, y: goloc.row)
-        blockArray[goloc.col, goloc.row] = block
-        blockArray[x,y] = nil
-        delegate?.blockDidSlide(self, block: block!)
-    }
-    
-    func isValid(col: Int, row: Int) -> Bool {
-        return col >= 0 && col < 4 && row >= 0 && row < 4
+        if goloc.col != x || goloc.row != y {
+            var block = blockArray[x,y]
+            block?.setLocation(goloc.col, y: goloc.row)
+            blockArray[goloc.col, goloc.row] = block
+            blockArray[x,y] = nil
+            delegate?.blockDidSlide(self, block: block!)
+            return true
+        }
+        return false
     }
     
     func swipeUp(){
+        var somethingHappened = false
         for var c = 0; c < NumCols; c++ {
             for var r = NumRows - 2; r >= 0; r-- {
-                slide(0, dely: 1, x: c, y: r)
+                if slide(0, dely: 1, x: c, y: r) {
+                    somethingHappened = true
+                }
+                
             }
         }
-        addBlock()
-        clearCombined()
+        if somethingHappened {
+            postSwipe()
+        }
     }
     
     func swipeDown(){
@@ -143,8 +169,7 @@ class Twenty48{
                 slide(0, dely: -1, x: c, y: r)
             }
         }
-        addBlock()
-        clearCombined()
+        postSwipe()
     }
     
     func swipeLeft(){
@@ -153,8 +178,7 @@ class Twenty48{
                 slide(-1, dely: 0, x: c, y: r)
             }
         }
-        addBlock()
-        clearCombined()
+        postSwipe()
     }
 
     func swipeRight(){
@@ -163,8 +187,19 @@ class Twenty48{
                 slide(1, dely: 0, x: c, y: r)
             }
         }
+        postSwipe()
+    }
+    
+    func isValid(col: Int, row: Int) -> Bool {
+        return col >= 0 && col < 4 && row >= 0 && row < 4
+    }
+    
+    func postSwipe() {
         addBlock()
         clearCombined()
+        if didLose() {
+            endGame(false)
+        }
     }
     
     func clearCombined(){
@@ -178,8 +213,36 @@ class Twenty48{
         }
     }
     
-    func endGame(){
-        delegate?.gameDidEnd(self)
+    func didLose() -> Bool {
+        for var r = 0; r < NumRows; r++ {
+            for var c = 0; c < NumCols; c++ {
+                if isValid(c + 1, row: r){
+                    if blockArray[c,r]?.number == blockArray[c + 1,r]?.number{
+                        return false
+                    }
+                }
+                if isValid(c - 1, row: r){
+                    if blockArray[c,r]?.number == blockArray[c - 1,r]?.number{
+                        return false
+                    }
+                }
+                if isValid(c, row: r + 1){
+                    if blockArray[c,r]?.number == blockArray[c,r + 1]?.number{
+                        return false
+                    }
+                }
+                if isValid(c, row: r - 1){
+                    if blockArray[c,r]?.number == blockArray[c,r - 1]?.number{
+                        return false
+                    }
+                }
+            }
+        }
+        return true
+    }
+    
+    func endGame(win: Bool){
+        delegate?.gameDidEnd(self, win: win)
     }
     
 }
