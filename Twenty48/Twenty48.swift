@@ -66,31 +66,13 @@ class Twenty48{
     }
     
     func testAddBlock(){
-        var block1 = Block(col: 0, row: 3, number: 4)
-//        var block2 = Block(col: 1, row: 3, number: 4)
-//        var block3 = Block(col: 2, row: 0, number: 2)
-//        var block4 = Block(col: 3, row: 0, number: 4)
-//        var block5 = Block(col: 0, row: 1, number: 4)
-//        var block6 = Block(col: 1, row: 1, number: 2)
-//        var block7 = Block(col: 2, row: 1, number: 4)
-//        var block8 = Block(col: 3, row: 1, number: 2)
+        var block1 = Block(col: 0, row: 3, number: 512)
+        var block2 = Block(col: 1, row: 3, number: 512)
         blockArray[0, 3] = block1
-//        blockArray[1, 2] = block2
-//        blockArray[2, 1] = block3
-//        blockArray[3, 0] = block4
-//        blockArray[0, 1] = block5
-//        blockArray[1, 1] = block6
-//        blockArray[2, 1] = block7
-//        blockArray[3, 1] = block8
+        blockArray[1, 3] = block2
         delegate?.blockWasAdded(self, block: block1)
-//        delegate?.blockWasAdded(self, block: block2)
-//        delegate?.blockWasAdded(self, block: block3)
-//        delegate?.blockWasAdded(self, block: block4)
-//        delegate?.blockWasAdded(self, block: block5)
-//        delegate?.blockWasAdded(self, block: block6)
-//        delegate?.blockWasAdded(self, block: block7)
-//        delegate?.blockWasAdded(self, block: block8)
-    }
+        delegate?.blockWasAdded(self, block: block2)
+}
     
     func beginGame(){
         score = 0
@@ -125,7 +107,7 @@ class Twenty48{
                     doubledBlock?.doubleNum()
                     doubledBlock?.didCombine()
                     score += doubledBlock!.number
-                    if(doubledBlock!.number >= 64) {
+                    if(doubledBlock!.number >= 2048) {
                         self.endGame(true)
                     }
                     var movedBlock = blockArray[x,y]

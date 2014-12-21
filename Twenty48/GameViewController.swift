@@ -107,6 +107,7 @@ class GameViewController: UIViewController, Twenty48Delegate {
     
     @IBAction func didTapRestart(sender: UIButton) {
         viewDidLoad()
+        scoreLabel.text = "SCORE \(twenty48.score)"
     }
     
     override func shouldAutorotate() -> Bool {

@@ -21,6 +21,14 @@
 		FCA221911A44E678009F960F /* Game Tile.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA221901A44E678009F960F /* Game Tile.png */; };
 		FCB4994B1A4493C4004657E0 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4994A1A4493C4004657E0 /* GameOverViewController.swift */; };
 		FCB4994D1A4494D3004657E0 /* GameWonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4994C1A4494D3004657E0 /* GameWonViewController.swift */; };
+		FCC73A311A477C7000AE5D63 /* 512.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC73A2E1A477C7000AE5D63 /* 512.png */; };
+		FCC73A321A477C7000AE5D63 /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC73A2F1A477C7000AE5D63 /* 1024.png */; };
+		FCC73A331A477C7000AE5D63 /* 2048.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC73A301A477C7000AE5D63 /* 2048.png */; };
+		FCC73A3C1A4789F400AE5D63 /* 87 icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC73A3A1A4789F400AE5D63 /* 87 icon.png */; };
+		FCC73A3D1A4789F400AE5D63 /* 58 icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC73A3B1A4789F400AE5D63 /* 58 icon.png */; };
+		FCC73A401A478A7E00AE5D63 /* 120 icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC73A3E1A478A7E00AE5D63 /* 120 icon.png */; };
+		FCC73A411A478A7E00AE5D63 /* 80 icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC73A3F1A478A7E00AE5D63 /* 80 icon.png */; };
+		FCC73A431A478AB100AE5D63 /* 180 icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC73A421A478AB100AE5D63 /* 180 icon.png */; };
 		FCDFEF1C1A3FEE8200D6D263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFEF1B1A3FEE8200D6D263 /* AppDelegate.swift */; };
 		FCDFEF201A3FEE8200D6D263 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFEF1F1A3FEE8200D6D263 /* GameScene.swift */; };
 		FCDFEF221A3FEE8200D6D263 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFEF211A3FEE8200D6D263 /* GameViewController.swift */; };
@@ -57,6 +65,14 @@
 		FCA221901A44E678009F960F /* Game Tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Game Tile.png"; sourceTree = "<group>"; };
 		FCB4994A1A4493C4004657E0 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		FCB4994C1A4494D3004657E0 /* GameWonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameWonViewController.swift; sourceTree = "<group>"; };
+		FCC73A2E1A477C7000AE5D63 /* 512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 512.png; sourceTree = "<group>"; };
+		FCC73A2F1A477C7000AE5D63 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024.png; sourceTree = "<group>"; };
+		FCC73A301A477C7000AE5D63 /* 2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2048.png; sourceTree = "<group>"; };
+		FCC73A3A1A4789F400AE5D63 /* 87 icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "87 icon.png"; sourceTree = "<group>"; };
+		FCC73A3B1A4789F400AE5D63 /* 58 icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "58 icon.png"; sourceTree = "<group>"; };
+		FCC73A3E1A478A7E00AE5D63 /* 120 icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "120 icon.png"; sourceTree = "<group>"; };
+		FCC73A3F1A478A7E00AE5D63 /* 80 icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "80 icon.png"; sourceTree = "<group>"; };
+		FCC73A421A478AB100AE5D63 /* 180 icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "180 icon.png"; sourceTree = "<group>"; };
 		FCDFEF161A3FEE8200D6D263 /* Twenty48.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twenty48.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCDFEF1A1A3FEE8200D6D263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCDFEF1B1A3FEE8200D6D263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,8 +145,16 @@
 		FCDFEF191A3FEE8200D6D263 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FCC73A2E1A477C7000AE5D63 /* 512.png */,
+				FCC73A2F1A477C7000AE5D63 /* 1024.png */,
+				FCC73A301A477C7000AE5D63 /* 2048.png */,
+				FCC73A3E1A478A7E00AE5D63 /* 120 icon.png */,
+				FCC73A421A478AB100AE5D63 /* 180 icon.png */,
+				FCC73A3F1A478A7E00AE5D63 /* 80 icon.png */,
 				FCA221901A44E678009F960F /* Game Tile.png */,
 				FC2E70FE1A43548A00EBFBC8 /* 2.png */,
+				FCC73A3A1A4789F400AE5D63 /* 87 icon.png */,
+				FCC73A3B1A4789F400AE5D63 /* 58 icon.png */,
 				FC2E70FF1A43548A00EBFBC8 /* 4.png */,
 				FC2E71001A43548A00EBFBC8 /* 8.png */,
 				FC2E71011A43548A00EBFBC8 /* 16.png */,
@@ -245,15 +269,23 @@
 			files = (
 				FC2E710A1A43548A00EBFBC8 /* 64.png in Resources */,
 				FC2E71071A43548A00EBFBC8 /* 8.png in Resources */,
+				FCC73A321A477C7000AE5D63 /* 1024.png in Resources */,
+				FCC73A411A478A7E00AE5D63 /* 80 icon.png in Resources */,
+				FCC73A401A478A7E00AE5D63 /* 120 icon.png in Resources */,
 				FC2E71061A43548A00EBFBC8 /* 4.png in Resources */,
 				FC2E71091A43548A00EBFBC8 /* 32.png in Resources */,
 				FCDFEF271A3FEE8200D6D263 /* Images.xcassets in Resources */,
+				FCC73A3D1A4789F400AE5D63 /* 58 icon.png in Resources */,
 				FC2E71051A43548A00EBFBC8 /* 2.png in Resources */,
+				FCC73A311A477C7000AE5D63 /* 512.png in Resources */,
 				FC2E710B1A43548A00EBFBC8 /* 256.png in Resources */,
 				FC8065B71A41F8D500AC0C9B /* Game Background.png in Resources */,
 				FC2E70FD1A43540800EBFBC8 /* 128.png in Resources */,
 				FCA221911A44E678009F960F /* Game Tile.png in Resources */,
+				FCC73A431A478AB100AE5D63 /* 180 icon.png in Resources */,
+				FCC73A3C1A4789F400AE5D63 /* 87 icon.png in Resources */,
 				FC2E71081A43548A00EBFBC8 /* 16.png in Resources */,
+				FCC73A331A477C7000AE5D63 /* 2048.png in Resources */,
 				FC8065B51A41D66300AC0C9B /* Tile Background.png in Resources */,
 				FCDFEF251A3FEE8200D6D263 /* Main.storyboard in Resources */,
 				FC8065B31A41CEC600AC0C9B /* Board Background.png in Resources */,

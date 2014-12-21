@@ -23,7 +23,7 @@ class GameWonViewController : UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scoreLabel.text = "\(gameViewController.twenty48.score)"
+        scoreLabel.text = "SCORE \(gameViewController.twenty48.score)"
     }
     
     @IBAction func didTapPlayAgain(sender: UIButton) {

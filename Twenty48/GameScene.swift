@@ -71,7 +71,7 @@ class GameScene: SKScene {
         let label = SKLabelNode(text: "\(block.number)")
         
         label.fontName = "Apple SD Gothic Neo"
-        label.fontSize = 50
+        label.fontSize = fontSize(countElements(label.text))
         label.fontColor = UIColor(red: 0.39, green: 0.35, blue: 0.19, alpha: 1.0)
         label.position = CGPoint(x: SquareSize / 2, y: SquareSize / 2)
         label.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Center
@@ -86,6 +86,22 @@ class GameScene: SKScene {
         
         block.spriteLabel = label
         block.sprite = sprite
+    }
+    
+    //returns the font size to be used given characters # of characters to be displayed
+    func fontSize(characters: Int) -> CGFloat{
+        switch characters {
+        case 1:
+            return 50
+        case 2:
+            return 50
+        case 3:
+            return 38
+        case 4:
+            return 30
+        default:
+            return 50
+        }
     }
     
     func updateBlockSpriteMove(block: Block) {
@@ -115,6 +131,7 @@ class GameScene: SKScene {
         
         let label = doubledBlock.spriteLabel!
         label.text = "\(doubledBlock.number)"
+        label.fontSize = fontSize(countElements(label.text))
         
         let sprite2 = doubledBlock.sprite!
         var texture = textureCache[doubledBlock.number]
