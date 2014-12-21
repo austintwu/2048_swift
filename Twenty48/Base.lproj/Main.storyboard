@@ -29,7 +29,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.68235294117647061" green="0.61960784313725492" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2it-js-Hjo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Game Tile.png" translatesAutoresizingMaskIntoConstraints="NO" id="2it-js-Hjo">
                                 <rect key="frame" x="15" y="28" width="149" height="149"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwS-AQ-Wvs">
@@ -124,6 +124,12 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.50588235290000005" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version of 2048 game by Austin Wu, 2014" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbo-72-pfj">
+                                <rect key="frame" x="16" y="612" width="343" height="21"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.96470588235294119" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -193,6 +199,12 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.50588235290000005" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version of 2048 game by Austin Wu, 2014" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm5-Tq-C1s">
+                                <rect key="frame" x="15" y="606" width="343" height="21"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215690000003" green="0.96862745100000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -207,4 +219,7 @@
             <point key="canvasLocation" x="1293.5" y="236.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Game Tile.png" width="1200" height="1200"/>
+    </resources>
 </document>

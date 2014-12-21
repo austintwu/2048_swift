@@ -18,6 +18,7 @@
 		FC8065B31A41CEC600AC0C9B /* Board Background.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8065B21A41CEC600AC0C9B /* Board Background.png */; };
 		FC8065B51A41D66300AC0C9B /* Tile Background.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8065B41A41D66300AC0C9B /* Tile Background.png */; };
 		FC8065B71A41F8D500AC0C9B /* Game Background.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8065B61A41F8D500AC0C9B /* Game Background.png */; };
+		FCA221911A44E678009F960F /* Game Tile.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA221901A44E678009F960F /* Game Tile.png */; };
 		FCB4994B1A4493C4004657E0 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4994A1A4493C4004657E0 /* GameOverViewController.swift */; };
 		FCB4994D1A4494D3004657E0 /* GameWonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB4994C1A4494D3004657E0 /* GameWonViewController.swift */; };
 		FCDFEF1C1A3FEE8200D6D263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFEF1B1A3FEE8200D6D263 /* AppDelegate.swift */; };
@@ -25,7 +26,6 @@
 		FCDFEF221A3FEE8200D6D263 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFEF211A3FEE8200D6D263 /* GameViewController.swift */; };
 		FCDFEF251A3FEE8200D6D263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDFEF231A3FEE8200D6D263 /* Main.storyboard */; };
 		FCDFEF271A3FEE8200D6D263 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCDFEF261A3FEE8200D6D263 /* Images.xcassets */; };
-		FCDFEF2A1A3FEE8200D6D263 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCDFEF281A3FEE8200D6D263 /* LaunchScreen.xib */; };
 		FCDFEF361A3FEE8200D6D263 /* Twenty48Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFEF351A3FEE8200D6D263 /* Twenty48Tests.swift */; };
 		FCDFEF401A3FEEEF00D6D263 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFEF3F1A3FEEEF00D6D263 /* Block.swift */; };
 		FCDFEF421A3FEF6500D6D263 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFEF411A3FEF6500D6D263 /* Array2D.swift */; };
@@ -54,6 +54,7 @@
 		FC8065B21A41CEC600AC0C9B /* Board Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Board Background.png"; sourceTree = "<group>"; };
 		FC8065B41A41D66300AC0C9B /* Tile Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile Background.png"; sourceTree = "<group>"; };
 		FC8065B61A41F8D500AC0C9B /* Game Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Game Background.png"; sourceTree = "<group>"; };
+		FCA221901A44E678009F960F /* Game Tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Game Tile.png"; sourceTree = "<group>"; };
 		FCB4994A1A4493C4004657E0 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		FCB4994C1A4494D3004657E0 /* GameWonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameWonViewController.swift; sourceTree = "<group>"; };
 		FCDFEF161A3FEE8200D6D263 /* Twenty48.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twenty48.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,7 +64,6 @@
 		FCDFEF211A3FEE8200D6D263 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		FCDFEF241A3FEE8200D6D263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCDFEF261A3FEE8200D6D263 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FCDFEF291A3FEE8200D6D263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FCDFEF2F1A3FEE8200D6D263 /* Twenty48Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Twenty48Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCDFEF341A3FEE8200D6D263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCDFEF351A3FEE8200D6D263 /* Twenty48Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twenty48Tests.swift; sourceTree = "<group>"; };
@@ -121,7 +121,6 @@
 				FCDFEF431A3FEF7F00D6D263 /* Twenty48.swift */,
 				FCDFEF231A3FEE8200D6D263 /* Main.storyboard */,
 				FCDFEF261A3FEE8200D6D263 /* Images.xcassets */,
-				FCDFEF281A3FEE8200D6D263 /* LaunchScreen.xib */,
 				FCDFEF191A3FEE8200D6D263 /* Supporting Files */,
 			);
 			path = Twenty48;
@@ -130,6 +129,7 @@
 		FCDFEF191A3FEE8200D6D263 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FCA221901A44E678009F960F /* Game Tile.png */,
 				FC2E70FE1A43548A00EBFBC8 /* 2.png */,
 				FC2E70FF1A43548A00EBFBC8 /* 4.png */,
 				FC2E71001A43548A00EBFBC8 /* 8.png */,
@@ -247,12 +247,12 @@
 				FC2E71071A43548A00EBFBC8 /* 8.png in Resources */,
 				FC2E71061A43548A00EBFBC8 /* 4.png in Resources */,
 				FC2E71091A43548A00EBFBC8 /* 32.png in Resources */,
-				FCDFEF2A1A3FEE8200D6D263 /* LaunchScreen.xib in Resources */,
 				FCDFEF271A3FEE8200D6D263 /* Images.xcassets in Resources */,
 				FC2E71051A43548A00EBFBC8 /* 2.png in Resources */,
 				FC2E710B1A43548A00EBFBC8 /* 256.png in Resources */,
 				FC8065B71A41F8D500AC0C9B /* Game Background.png in Resources */,
 				FC2E70FD1A43540800EBFBC8 /* 128.png in Resources */,
+				FCA221911A44E678009F960F /* Game Tile.png in Resources */,
 				FC2E71081A43548A00EBFBC8 /* 16.png in Resources */,
 				FC8065B51A41D66300AC0C9B /* Tile Background.png in Resources */,
 				FCDFEF251A3FEE8200D6D263 /* Main.storyboard in Resources */,
@@ -310,14 +310,6 @@
 				FCDFEF241A3FEE8200D6D263 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FCDFEF281A3FEE8200D6D263 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FCDFEF291A3FEE8200D6D263 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -404,6 +396,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Twenty48/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,6 +407,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Twenty48/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

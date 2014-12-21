@@ -67,23 +67,23 @@ class Twenty48{
     
     func testAddBlock(){
         var block1 = Block(col: 0, row: 3, number: 4)
-        var block2 = Block(col: 1, row: 3, number: 4)
+//        var block2 = Block(col: 1, row: 3, number: 4)
 //        var block3 = Block(col: 2, row: 0, number: 2)
 //        var block4 = Block(col: 3, row: 0, number: 4)
 //        var block5 = Block(col: 0, row: 1, number: 4)
 //        var block6 = Block(col: 1, row: 1, number: 2)
 //        var block7 = Block(col: 2, row: 1, number: 4)
 //        var block8 = Block(col: 3, row: 1, number: 2)
-        blockArray[0, 0] = block1
-        blockArray[1, 0] = block2
-//        blockArray[2, 0] = block3
+        blockArray[0, 3] = block1
+//        blockArray[1, 2] = block2
+//        blockArray[2, 1] = block3
 //        blockArray[3, 0] = block4
 //        blockArray[0, 1] = block5
 //        blockArray[1, 1] = block6
 //        blockArray[2, 1] = block7
 //        blockArray[3, 1] = block8
         delegate?.blockWasAdded(self, block: block1)
-        delegate?.blockWasAdded(self, block: block2)
+//        delegate?.blockWasAdded(self, block: block2)
 //        delegate?.blockWasAdded(self, block: block3)
 //        delegate?.blockWasAdded(self, block: block4)
 //        delegate?.blockWasAdded(self, block: block5)
@@ -95,7 +95,7 @@ class Twenty48{
     func beginGame(){
         score = 0
         delegate?.gameDidBegin(self)
-        self.testAddBlock()
+        self.addBlock()
     }
     
     // take block at loc x,y and move in delx dely direction
